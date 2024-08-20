@@ -1,0 +1,68 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 12 Pro",
+            "desc": "Apple iPhone 12th Generation",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://5.imimg.com/data5/SELLER/Default/2021/4/JX/FC/BN/127651858/apple-iphone-12-pro-gold-png-1000x1000.png"
+        },
+        {
+            "id": 2,
+            "name": "Pixel 5",
+            "desc": "Google Pixel Phone 5th Generation",
+            "price": 699,
+            "color": "#00ac51",
+            "image": "https://www.droid-life.com/wp-content/uploads/2022/03/Google-Pixel-5-2-980x653.jpg"
+        },
+        {
+            "id": 3,
+            "name": "M1 Macbook Air",
+            "desc": "Apple Macbook Air with Apple Silicone",
+            "price": 1099,
+            "color": "#e0bfea",
+            "image": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111883_macbookair.png"
+        },
+        {
+            "id": 4,
+            "name": "Playstation 5",
+            "desc": "Sony Playstation 5th Generation",
+            "price": 500,
+            "color": "#544ee4",
+            "image": "https://blog.playstation.com/tachyon/2023/10/cd56722db7b991b3d7a33f1bafd55f80d0ac553d.png?resize=1088%2C612&crop_strategy=smart&zoom=1.5"
+        },
+        {
+            "id": 5,
+            "name": "Airpods Pro",
+            "desc": "Apple Airpods Pro 1st Generation",
+            "price": 200,
+            "color": "#e3e4e9",
+            "image": "https://m-cdn.phonearena.com/images/hub/274-wide-two_940/Apple-AirPods-Pro-3-release-date-predictions-price-specs-and-must-know-features.webp?1721998103"
+        },
+        {
+            "id": 6,
+            "name": "iPad Pro",
+            "desc": "Apple iPad Pro 2020 edition",
+            "price": 799,
+            "color": "#f73984",
+            "image": "https://www.poojaratele.com/media/catalog/product/cache/28b568fbf82d79c53c9eab7361be58d0/a/p/apple-ipad-pro-10p5inch-wifi-rgold-thum1.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Galaxy S21 Ultra",
+            "desc": "Samsung Galaxy S21 Ultra 2021 edition",
+            "price": 1299,
+            "color": "#1c1c1c",
+            "image": "https://cdn.dxomark.com/wp-content/uploads/medias/post-71028/galaxys21_ultra-1024x768.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Galaxy S22 Ultra",
+            "desc": "Samsung Galaxy S22 Ultra 2022 edition",
+            "price": 899,
+            "color": "#7c95eb",
+            "image": "https://cdn.dxomark.com/wp-content/uploads/medias/post-112063/Samsung-Galaxy-S22-Ultra-Snapdragon_-featured-image-packshot-review-Recovered.jpg"
+        }
+    ]
+}
