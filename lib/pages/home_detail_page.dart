@@ -16,7 +16,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -34,8 +36,8 @@ class HomeDetailPage extends StatelessWidget {
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
                   )),
-              child: "Buy".text.make(),
-            ).wh(100, 50)
+              child: "Add Cart".text.make(),
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
@@ -67,8 +69,13 @@ class HomeDetailPage extends StatelessWidget {
                           .center
                           .make(),
                       10.heightBox,
+                      "Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences"
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p16()
                     ],
-                  ).py64(),
+                  ).py32(),
                 ),
               ),
             ),
