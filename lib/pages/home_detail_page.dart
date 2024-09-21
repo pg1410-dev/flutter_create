@@ -1,9 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_create/widgets/themes.dart';
-//import 'package:flutter/widgets.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import 'package:flutter_create/models/catalog.dart';
 
 class HomeDetailPage extends StatelessWidget {
@@ -17,11 +16,11 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: context.canvasColor,
       ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -31,12 +30,16 @@ class HomeDetailPage extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    MyTheme.darkBluishColor,
+                    context.theme.splashColor,
                   ),
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
                   )),
-              child: "Add Cart".text.make(),
+              child: "Add Cart"
+                  .text
+                  .color(context.theme.secondaryHeaderColor)
+                  .bold
+                  .make(),
             ).wh(120, 50)
           ],
         ).p32(),
@@ -55,22 +58,24 @@ class HomeDetailPage extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.pinkAccent,
+                  color: context.cardColor,
                   width: context.screenHeight,
                   child: Column(
                     children: [
                       catalog.name.text.xl4
-                          .color(MyTheme.darkBluishColor)
+                          .color(context.theme.secondaryHeaderColor)
                           .bold
                           .make(),
                       catalog.desc.text
                           .textStyle(context.captionStyle)
                           .xl
+                          .color(context.theme.secondaryHeaderColor)
                           .center
                           .make(),
                       10.heightBox,
                       "Who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences"
                           .text
+                          .color(context.theme.secondaryHeaderColor)
                           .textStyle(context.captionStyle)
                           .make()
                           .p16()
