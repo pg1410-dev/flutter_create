@@ -3,7 +3,7 @@ import 'package:flutter_create/models/catalog.dart';
 
 class ItemWidget extends StatelessWidget {
   final Item item;
-  const ItemWidget({required this.item});
+  const ItemWidget({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class ItemWidget extends StatelessWidget {
         trailing: Text(
           "\$${item.price}",
           textScaleFactor: 1.5,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.deepPurple,
             fontWeight: FontWeight.bold,
           ),

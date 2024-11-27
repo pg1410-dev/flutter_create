@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
     final decodedData = jsonDecode(catalogJson);
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
         backgroundColor: context.theme.splashColor,
-        child: Icon(
+        child: const Icon(
           CupertinoIcons.cart,
           color: Colors.white,
         ),
@@ -57,11 +57,11 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CatalogHeader(),
+              const CatalogHeader(),
               if (CatalogModel.items.isNotEmpty)
-                CatalogList().py16().expand()
+                const CatalogList().py16().expand()
               else
-                CircularProgressIndicator().centered().py16().expand(),
+                const CircularProgressIndicator().centered().py16().expand(),
             ],
           ),
         ),
