@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_create/models/cart.dart';
 import 'package:flutter_create/models/catalog.dart';
 import 'package:flutter_create/pages/home_detail_page.dart';
 import 'package:flutter_create/widgets/themes.dart';
@@ -32,7 +33,7 @@ class CatalogList extends StatelessWidget {
 
 class CatalogItem extends StatelessWidget {
   final Item catalog;
-  const CatalogItem({Key? key, required this.catalog}) : super(key: key);
+  const CatalogItem({super.key, required this.catalog});
 
   @override
   Widget build(BuildContext context) {
@@ -55,20 +56,9 @@ class CatalogItem extends StatelessWidget {
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalog.price}".text.xl.bold.make(),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(context.theme.splashColor),
-                      shape: MaterialStateProperty.all(
-                        const StadiumBorder(),
-                      ),
-                    ),
-                    child: "Add Cart"
-                        .text
-                        .color(context.theme.secondaryHeaderColor)
-                        .make(),
-                  ).wh(90, 40)
+                  _AddToCart(
+                    catalog: catalog,
+                  ),
                 ],
               ).pOnly(right: 10.0)
             ],
@@ -76,5 +66,39 @@ class CatalogItem extends StatelessWidget {
         ],
       ),
     ).white.rounded.square(150).make().py16();
+  }
+}
+
+class _AddToCart extends StatefulWidget {
+  final Item catalog;
+  const _AddToCart({super.key, required this.catalog});
+
+  @override
+  State<_AddToCart> createState() => _AddToCartState();
+}
+
+class _AddToCartState extends State<_AddToCart> {
+  bool isAdded = false;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        isAdded = isAdded.toggle();
+        final _catalog = CatalogModel();
+        final _cart = CartModel();
+        _cart.catalog = _catalog;
+        _cart.add(widget.catalog);
+        setState(() {});
+      },
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(context.theme.splashColor),
+        shape: MaterialStateProperty.all(
+          const StadiumBorder(),
+        ),
+      ),
+      child: isAdded
+          ? Icon(Icons.done)
+          : "Add Cart".text.color(context.theme.secondaryHeaderColor).make(),
+    ).wh(90, 40);
   }
 }
