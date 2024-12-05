@@ -8,9 +8,9 @@ import 'package:flutter_create/models/catalog.dart';
 class HomeDetailPage extends StatelessWidget {
   final Item catalog;
   const HomeDetailPage({
-    Key? key,
+    super.key,
     required this.catalog,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
